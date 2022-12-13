@@ -20,10 +20,54 @@ namespace RockPaperScissors
                 if (enemyChoice == 0)
                 {
                     Console.WriteLine("Enemy chooses rock.");
-
                     switch (playerChoice)
                     {
                         case "r":
+                            Console.WriteLine("Tie!");
+                            break;
+                        case "p":
+                            Console.WriteLine("Player wins this round!");
+                            playerScore++;
+                            break;
+                        default:
+                            Console.WriteLine("Enemy wins this round!");
+                            enemyScore++;
+                            break;
+                    }
+                }
+                else if (enemyChoice == 1)
+                {
+                    Console.WriteLine("Enemy chooses paper.");
+                    switch (playerChoice)
+                    {
+                        case "r":
+                            Console.WriteLine("Enemy wins this round!");
+                            enemyScore++;
+                            break;
+                        case "p":
+                            Console.WriteLine("Tie!");
+                            break;
+                        default:
+                            Console.WriteLine("Player wins this round!");
+                            playerScore++;
+                            break;
+                    }
+
+                }
+                else
+                {
+                    Console.WriteLine("Enemy chooses scissors.");
+                    switch (playerChoice)
+                    {
+                        case "r":
+                            Console.WriteLine("Player wins this round!");
+                            playerScore++;
+                            break;
+                        case "p":
+                            Console.WriteLine("Enemy wins this round!");
+                            enemyScore++;
+                            break;
+                        default:
                             Console.WriteLine("Tie!");
                             break;
                     }
