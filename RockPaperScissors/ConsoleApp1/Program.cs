@@ -11,15 +11,20 @@ namespace RockPaperScissors
             int playerScore = 0;
             int enemyScore = 0;
             Console.WriteLine("Welcome to rock paper scissors!");
+
             while (playerScore != 3 && enemyScore != 3)
             {
+                Console.WriteLine(); // Prints a blank line
                 Console.WriteLine("Player score - " + playerScore + ". Enemy score - " + enemyScore);
                 Console.WriteLine("Please enter 'r' for rock, 'p' for paper or anything else for scissors.");
                 string playerChoice = Console.ReadLine();
+
                 int enemyChoice = random.Next(0, 3);
-                if (enemyChoice == 0)
+
+                if (enemyChoice == 0) // Enemy chose rock
                 {
                     Console.WriteLine("Enemy chooses rock.");
+
                     switch (playerChoice)
                     {
                         case "r":
@@ -35,9 +40,10 @@ namespace RockPaperScissors
                             break;
                     }
                 }
-                else if (enemyChoice == 1)
+                else if (enemyChoice == 1) // Enemy chose paper
                 {
                     Console.WriteLine("Enemy chooses paper.");
+
                     switch (playerChoice)
                     {
                         case "r":
@@ -54,9 +60,10 @@ namespace RockPaperScissors
                     }
 
                 }
-                else
+                else // Enemy chose scissors
                 {
                     Console.WriteLine("Enemy chooses scissors.");
+
                     switch (playerChoice)
                     {
                         case "r":
@@ -72,6 +79,16 @@ namespace RockPaperScissors
                             break;
                     }
                 }
+
+            }
+
+            if (playerScore == 3)
+            {
+                Console.WriteLine("You win!");
+            }
+            else
+            {
+                Console.WriteLine("You lose!");
             }
         }
     }
