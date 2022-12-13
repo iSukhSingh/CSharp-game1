@@ -17,6 +17,17 @@ namespace RockPaperScissors
                 Console.WriteLine("Please enter 'r' for rock, 'p' for paper or anything else for scissors.");
                 string playerChoice = Console.ReadLine();
                 int enemyChoice = random.Next(0, 3);
+                if (enemyChoice == 0)
+                {
+                    Console.WriteLine("Enemy chooses rock.");
+
+                    switch (playerChoice)
+                    {
+                        case "r":
+                            Console.WriteLine("Tie!");
+                            break;
+                    }
+                }
             }
         }
     }
